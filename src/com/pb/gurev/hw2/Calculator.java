@@ -11,7 +11,7 @@ public class Calculator {
             x = reader.nextInt();
             System.out.print("Введите значение operand2: ");
             y = reader.nextInt();
-            System.out.print("\nEnter an operator (+, -, *, /): ");
+            System.out.print("Введите символ математического действия (+, -, *, /): ");
             sign = reader.next().charAt(0);
             switch(sign) {
                 case '+': ans = x + y;
@@ -22,13 +22,13 @@ public class Calculator {
                     break;
                 case '/': ans = x / y;
                     break;
-                default:  System.out.printf("Error! Enter correct operator");
+                default:  System.out.print("Error! Enter correct operator");
                     return;
 
 
             }
-            System.out.print("\nРезультат операции:\n");
-            System.out.printf(x + " " + sign + " " + y + " = " + ans);
+            System.out.print("Результат операции:");
+            System.out.print(x + " " + sign + " " + y + " = " + ans);
         }
 }
 
