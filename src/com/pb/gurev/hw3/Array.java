@@ -1,16 +1,14 @@
 package com.pb.gurev.hw3;
-
-import com.sun.org.apache.xerces.internal.impl.xs.util.XInt;
-
-import javax.swing.*;
-
+import java.util.Arrays;
 public class Array {
+    private static int і;
     public static void main(String[] args) {
-
-        int[] x ={88, 12, 18, 36, 95, 1, 53, 69, 44, 15};
-        for (int num : x){
-            System.out.print(num + ",");
-        }
+       // Scanner input = new Scanner(System.in);
+        int  [] x = {500, 900, 700, 600, 800, 300, 200, 200, 200, 200};
+        int sum = Arrays.stream(x).sum();
+        for (int i = 0; i < x.length; i++);
+        sum += x[і];
+        System.out.println("Сумма элементов массива:" + sum);
         int count;
         do{
             count = 0;
@@ -25,7 +23,8 @@ public class Array {
         } while (count > 0);
         System.out.println();
         for (int num : x){
-            System.out.println(num + ",");
+            System.out.print(num + "    ");
+
         }
     }
 }
