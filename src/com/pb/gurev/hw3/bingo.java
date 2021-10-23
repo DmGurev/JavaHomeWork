@@ -1,4 +1,6 @@
 package com.pb.gurev.hw3;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.util.QDecoderStream;
+
 import java.util.Random;
 import java.util.Scanner;
 public class bingo {
@@ -9,7 +11,7 @@ public class bingo {
         int numberOfTries = 0;
         int guess;
         boolean x = false;
-        System.out.println("Отгадайте число от 0 до 100");
+        System.out.println("Отгадайте число от 0 до 100. Надоест и захотите дострочно выйти - введите число больше 100");
         while (x == false) {
             System.out.println("Итак... Ваше число!");
             guess = input.nextInt();
@@ -23,11 +25,17 @@ public class bingo {
              else if  (guess < numberToGuess) {
                 System.out.println("Мало");
             }
-            else if (guess > numberToGuess) {
+            else if (guess > numberToGuess && guess <=100) {
                 System.out.println("Много");
             }
-
-            continue;
+            else if (guess >= 100) {
+                    System.out.println("До встречи");
+                    break;
+            }
+           continue;
+            //return;
+            //break;
+            //\\(x>=51 && x<=100){
         }
     }
 }
