@@ -1,35 +1,32 @@
 package com.pb.gurev.hw3;
 import java.util.Arrays;
-//import java.util.Scanner;
+import java.util.Scanner;
+
 public class Array {
-    private static int і;
     public static void main(String[] args) {
-       //Scanner input = new Scanner(System.in);
-        System.out.println("Введите массив");
-        int  [] x = {20, 2, 2, 2, 2};
-       // System.out.println("Сумма элементов массива:" + sum);
-        int sum = Arrays.stream(x).sum();
-        for (int i = 0; i < x.length; i++);
-        sum += x[і];
-        System.out.println("Сумма элементов массива:" + sum);
+        System.out.print("Введите 10 целых чисел (Массив)");
+        Scanner input = new Scanner(System.in);
+        int array [] = new int [10];
+        for (int i = 0; i<array.length; i++)
+        {array [i] = input.nextInt();}
+
+        int sum = 0;
+        for (int num: array){
+            sum = sum+num;}
+        System.out.println("Cумма элементов массива равна:" +sum);
+
         int count;
         do{
             count = 0;
-        for (int i = 0; i < x.length-1; i++){
-               if (x[i] > x[i+1]){
-                   int temp = x [i];
-                   x[i] = x[i+1];
-                   x [i+1] = temp;
-                   count++;
-               }
+            for (int i = 0; i<array.length-1; i++){
+                if (array[i] > array[i + 1]) {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    count++;
+                }
             }
-        } while (count > 0);
-        System.out.println();
-        for (int num : x){
-            System.out.print(num + " ");
-
-        }
+        } while (count>0);
+        System.out.print("Сортировка от меньшего к большему"+ Arrays.toString(array));
     }
 }
-
-
