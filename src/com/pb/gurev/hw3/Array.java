@@ -1,10 +1,13 @@
 package com.pb.gurev.hw3;
 import java.util.Arrays;
+//import java.util.Scanner;
 public class Array {
     private static int і;
     public static void main(String[] args) {
-       // Scanner input = new Scanner(System.in);
-        int  [] x = {500, 900, 700, 600, 800, 300, 200, 200, 200, 200};
+       //Scanner input = new Scanner(System.in);
+        System.out.println("Введите массив");
+        int  [] x = {20, 2, 2, 2, 2};
+       // System.out.println("Сумма элементов массива:" + sum);
         int sum = Arrays.stream(x).sum();
         for (int i = 0; i < x.length; i++);
         sum += x[і];
@@ -23,7 +26,7 @@ public class Array {
         } while (count > 0);
         System.out.println();
         for (int num : x){
-            System.out.print(num + "    ");
+            System.out.print(num + " ");
 
         }
     }

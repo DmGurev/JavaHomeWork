@@ -35,7 +35,6 @@ public class bingo {
            continue;
             //return;
             //break;
-            //\\(x>=51 && x<=100){
         }
     }
 }
