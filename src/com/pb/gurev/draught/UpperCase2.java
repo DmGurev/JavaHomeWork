@@ -5,10 +5,13 @@ import java.io.InputStreamReader;
 
 public class UpperCase2 {
     public static void main (String [] args) throws IOException {
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     String stringln= reader.readLine();
     String[] words= stringln.split(" ");
-    for (int i=0; i<words.length; i++){
+    for (int i=0; i<words.length-1; i++){
         words[i]=Character.toUpperCase( words[i].charAt(0))+words[i].substring(1);
     }
     for (int i=0; i<words.length; i++){
