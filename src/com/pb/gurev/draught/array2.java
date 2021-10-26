@@ -10,6 +10,16 @@ public class array2 {
         for (int i = 0; i<array.length; i++)
         {array [i] = input.nextInt();}
 
+        int counter;
+        counter=0;
+       // pos= new pos();
+        for (int x = 0; x < array.length; x++) {
+        if (array [x] > 0);
+            counter=  counter+1;
+      }
+      System.out.println("Положительные элементы:" + counter);
+
+
         int sum = 0;
         for (int num: array){
             sum = sum+num;}
@@ -27,6 +37,6 @@ public class array2 {
                 }
             }
         } while (count>0);
-        System.out.print("Сортировка от меньшего к большему"+ Arrays.toString(array));
+        System.out.print("Сортировка от меньшего к большему: " + Arrays.toString(array));
     }
 }
