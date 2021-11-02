@@ -64,20 +64,33 @@ public class Reader {
 
   // TAKE BOOK
 
-        public void takeBook (String readerName) {
-            System.out.println(readerName + "взял книг: 1");
-        }
-        public void takeBook (String readerName, String bookTitle, String bookAuthor) {
-        System.out.println(readerName + "взял книг: 1" + bookTitle + bookAuthor);
-        }
-        public void takeBook (String readerName, String bookTitle, String bookAuthor, String bookYear) {
-        System.out.println(readerName + "взял книг: 1" + bookTitle + bookAuthor+ ",  год издания:  " +bookYear);
+    public void takeBook (String readerName) {
+        System.out.println(readerName + "взял книг: 1");
     }
-
+    public void takeBook (String readerName, String bookTitle) {
+        System.out.println(readerName + "взял книг: 1, " + " название:"+ bookTitle);
+    }
+    public void takeBook (String readerName, String bookTitle, String bookAuthor, String bookYear) {
+        System.out.println(readerName + "взял книг: 1, " + " название:"+ bookTitle + ", автор:"+ bookAuthor +", год издания:"+ bookYear);
+    }
+    // RETURN BOOK
+    public void returnBook(String readerName) {
+        System.out.println(readerName + "вернул книг: 1 ");
+    }
+    public void returnBook(String readerName, String bookTitle) {
+        System.out.println(readerName + "вернул книг: 1," + "название:"+bookTitle);
+    }
+    public void returnBook(String readerName, String bookTitle, String bookAuthor, String bookYear) {
+        System.out.println(readerName + "взял книг: 1, " + " название:"+ bookTitle + ", автор:"+ bookAuthor +", год издания:"+ bookYear);
+    }
+  /*      public void takeBook (String readerName, String bookTitle, String bookAuthor, String bookYear) {
+        System.out.println(readerName + "взял книг: 3" + bookTitle + bookAuthor+ ",  год издания:  " +bookYear);
+    }
+*/
 /*
     public void takeBook(String readerName, String bookTitle) {
         System.out.println(readerName + "взял книг: 3" + bookTitle);
-    }
+
     public void takeBook(String readerName, String bookTitle, String bookAuthor) {
         System.out.println(readerName + "взял книг: 3" + bookTitle + bookAuthor);
     }

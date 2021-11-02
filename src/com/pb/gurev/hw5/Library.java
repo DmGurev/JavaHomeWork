@@ -36,9 +36,19 @@ public class Library {
         reader1.setReaderPhoneNum("066000001");
         reader1.setReaderBookQuantity("1");
 
+      // book1.getBook()
+       /*        book1.getBookTitle(),book1.getBookAuthor(),
+               book2.getBookTitle(),book2.getBookAuthor(),
+               book3.getBookTitle(),book3.getBookAuthor());*/
        reader1.takeBook(reader1.getReaderName());
-       reader1.takeBook(reader1.getReaderName(), book1.getBookTitle(),book1.getBookAuthor());
-       reader1.takeBook(reader1.getReaderName(), book1.getBookTitle(),book1.getBookAuthor(), book1.getBookYear());
+       reader1.takeBook(reader1.getReaderName(), book1.getBookTitle());
+       reader1.takeBook(reader1.getReaderName(), book1.getBookTitle(), book1.getBookAuthor(), book1.getBookYear());
+
+       reader1.returnBook(reader1.getReaderName());
+       reader1.returnBook(reader1.getReaderName(), book2.getBookTitle());
+       reader1.returnBook(reader1.getReaderName(), book2.getBookTitle(),  book2.getBookAuthor(), book2.getBookYear());
+
+
        //reader1.takeBook (reader1.getReaderName(), book1.getBookTitle(), book2.getBookTitle(),book3.getBookTitle());
 /*       reader1.takeBook (reader1.getReaderName(),book1.getBookTitle(), book1.getBookAuthor(),book2.getBookTitle(), book2.getBookAuthor(),
                book3.getBookTitle(),book3.getBookAuthor());*/
