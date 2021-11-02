@@ -83,23 +83,6 @@ public class Reader {
     public void returnBook(String readerName, String bookTitle, String bookAuthor, String bookYear) {
         System.out.println(readerName + "взял книг: 1, " + " название:"+ bookTitle + ", автор:"+ bookAuthor +", год издания:"+ bookYear);
     }
-  /*      public void takeBook (String readerName, String bookTitle, String bookAuthor, String bookYear) {
-        System.out.println(readerName + "взял книг: 3" + bookTitle + bookAuthor+ ",  год издания:  " +bookYear);
-    }
-*/
-/*
-    public void takeBook(String readerName, String bookTitle) {
-        System.out.println(readerName + "взял книг: 3" + bookTitle);
-
-    public void takeBook(String readerName, String bookTitle, String bookAuthor) {
-        System.out.println(readerName + "взял книг: 3" + bookTitle + bookAuthor);
-    }
-
-
-
-
-
-*/
 
     public String getReader() {
         return "Студент: " + readerName + ", читательский билет: " + readerCardNum +
