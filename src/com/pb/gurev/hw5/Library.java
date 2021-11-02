@@ -10,9 +10,9 @@ public class Library {
         book1.setBookAuthor("А.Кристи");
         book1.setBookYear("1997");
 
-      book2.setBookTitle("'Война миров'");
-      book2.setBookAuthor("Г.Уэллс");
-      book2.setBookYear("1985");
+        book2.setBookTitle("'Война миров'");
+        book2.setBookAuthor("Г.Уэллс");
+        book2.setBookYear("1985");
 
      book3.setBookTitle("'Зверобой'");
      book3.setBookAuthor("Д.Ф.Купер");
@@ -23,7 +23,7 @@ public class Library {
        System.out.println(book3.getBook());
        Book[] books = {book1,book2,book3};
        for (Book a:books) {
-        }
+       }
        Reader reader1 = new Reader ("Иваненко Д.М.", "001","Химия и Биология",
                "01.02.2004 г.р.", "066000001","1"  );
 
@@ -32,14 +32,18 @@ public class Library {
         reader1.setReaderName("Иваненко Д.М.");
         reader1.setReaderCardNum ("001");
         reader1.setReaderFaculty("Химия и Биология");
-        reader1.setReaderDateOfBirth ("01.02.");
+        reader1.setReaderDateOfBirth ("01.02.2004 г.р.");
         reader1.setReaderPhoneNum("066000001");
         reader1.setReaderBookQuantity("1");
-       // reader1.setReaderBookQuantity("1");
 
-       {
-        //   Reader.takeBook("Иваненко Д.М.");
-       }
+       reader1.takeBook(reader1.getReaderName());
+       reader1.takeBook(reader1.getReaderName(), book1.getBookTitle(),book1.getBookAuthor());
+       reader1.takeBook(reader1.getReaderName(), book1.getBookTitle(),book1.getBookAuthor(), book1.getBookYear());
+       //reader1.takeBook (reader1.getReaderName(), book1.getBookTitle(), book2.getBookTitle(),book3.getBookTitle());
+/*       reader1.takeBook (reader1.getReaderName(),book1.getBookTitle(), book1.getBookAuthor(),book2.getBookTitle(), book2.getBookAuthor(),
+               book3.getBookTitle(),book3.getBookAuthor());*/
+
+
    }
 }
 

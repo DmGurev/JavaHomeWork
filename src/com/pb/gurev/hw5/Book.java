@@ -1,9 +1,9 @@
 package com.pb.gurev.hw5;
 
 public class Book {
-    public  String bookTitle;
-    private String bookAuthor;
-    private String bookYear;
+    public String bookTitle;
+    public String bookAuthor;
+    public String bookYear;
 
     public Book (String bookTitle, String bookAuthor, String bookYear){
         this.bookTitle = bookTitle;
@@ -33,7 +33,7 @@ public class Book {
     }
 
     String getBook (){
-        return "[ Название книги:" + bookTitle + ", автор:" + bookAuthor + ", год издания:" + bookYear+" ]";
+        return  "[ Название книги:" + bookTitle + ", автор:" + bookAuthor + ", год издания:" + bookYear+" ]";
     }
 }
 

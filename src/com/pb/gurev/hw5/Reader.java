@@ -61,16 +61,40 @@ public class Reader {
     public void setReaderBookQuantity (String ReaderBookQuantity){
         this.readerBookQuantity = readerBookQuantity;
     }
-//    Public void takeBook(String readerName, String readerBookQuantity) {
-       // System.out.println("Иваненко Д.М.взял книг: 1: 'Восточный экспресс'");
-      //  System.out.println(readerName + "взял книг: "+ readerBookQuantity);
 
-    String getReader (){
-        return "Студент: " + readerName + ", читательский билет: " + readerCardNum + ", факультет: " + readerFaculty
-                +", дата рождения: " + readerDateOfBirth + ", номер телефона: " + readerPhoneNum + ", количество книг: "
-                + readerBookQuantity+" ";
-            }
+  // TAKE BOOK
+
+        public void takeBook (String readerName) {
+            System.out.println(readerName + "взял книг: 1");
+        }
+        public void takeBook (String readerName, String bookTitle, String bookAuthor) {
+        System.out.println(readerName + "взял книг: 1" + bookTitle + bookAuthor);
+        }
+        public void takeBook (String readerName, String bookTitle, String bookAuthor, String bookYear) {
+        System.out.println(readerName + "взял книг: 1" + bookTitle + bookAuthor+ ",  год издания:  " +bookYear);
+    }
+
+/*
+    public void takeBook(String readerName, String bookTitle) {
+        System.out.println(readerName + "взял книг: 3" + bookTitle);
+    }
+    public void takeBook(String readerName, String bookTitle, String bookAuthor) {
+        System.out.println(readerName + "взял книг: 3" + bookTitle + bookAuthor);
+    }
+
+
+
+
+
+*/
+
+    public String getReader() {
+        return "Студент: " + readerName + ", читательский билет: " + readerCardNum +
+                ", факультет: " + readerFaculty +", дата рождения: " + readerDateOfBirth +
+                ", номер телефона: " + readerPhoneNum;
+    }
 }
+
 
 
 
