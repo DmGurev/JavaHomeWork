@@ -1,104 +1,102 @@
 package com.pb.gurev.hw5;
 
+import java.time.LocalDate;
+
 public class Reader {
-    public String readerName;
-    private String readerCardNum;
-    private String readerFaculty;
-    private String readerDateOfBirth;
-    private String readerPhoneNum;
-    private String readerBookQuantity;
 
-    public Reader (String readerName, String readerCardNum, String readerFaculty,
-                   String readerDateOfBirth, String readerPhoneNum, String readerBookQuantity)
-    {
-        this.readerName = readerName;
-        this.readerCardNum = readerCardNum;
-        this.readerFaculty = readerFaculty;
-        this.readerDateOfBirth = readerDateOfBirth;
-        this.readerPhoneNum = readerPhoneNum;
-        this.readerBookQuantity = readerBookQuantity;
+    private String fio;
+    private int libraryCard;
+    private String faculty;
+    private LocalDate dateOfBirth;
+    private String phone;
+
+    public Reader(String fio, int libraryCard, String faculty, LocalDate dateOfBirth, String phone) {
+        this.fio = fio;
+        this.libraryCard = libraryCard;
+        this.faculty = faculty;
+        this.dateOfBirth = dateOfBirth;
+        this.phone = phone;
     }
 
-    public String getReaderName (){
-        return readerName;
-    }
-    public void setReaderName (String readerName){
-        this.readerName = readerName;
+    public String getFio() {
+        return fio;
     }
 
-    public String getReaderCardNum (){
-        return readerCardNum;
-    }
-    public void setReaderCardNum (String readerCardNum){
-        this.readerCardNum = readerCardNum;
+    public int getLibraryCard() {
+        return libraryCard;
     }
 
-    public String getReaderFaculty (){
-        return readerFaculty;
-    }
-    public void setReaderFaculty (String readerFaculty){
-    this.readerFaculty = readerFaculty;
+    public String getFaculty() {
+        return faculty;
     }
 
-    public String getReaderDateOfBirth (){
-        return readerDateOfBirth;
-    }
-    public void setReaderDateOfBirth (String ReaderDateOfBirth ){
-        this.readerDateOfBirth = readerDateOfBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public String getReaderPhoneNum (){
-        return readerPhoneNum;
-    }
-    public void setReaderPhoneNum (String ReaderphoneNum){
-        this.readerPhoneNum = readerPhoneNum;
+    public String getPhone() {
+        return phone;
     }
 
-
-    public String getReaderBookQuantity (){
-            return readerBookQuantity;
-    }
-    public void setReaderBookQuantity (String ReaderBookQuantity){
-        this.readerBookQuantity = readerBookQuantity;
+    public void setLibraryCard(int libraryCard) {
+        this.libraryCard = libraryCard;
     }
 
-  // TAKE BOOK
-
-    public void takeBook (String readerName) {
-        System.out.println(readerName + "взял книг: 1");
-    }
-    public void takeBook (String readerName, String bookTitle) {
-        System.out.println(readerName + "взял книг: 1, " + " название:"+ bookTitle);
-    }
-    public void takeBook (String readerName, String bookTitle, String bookAuthor, String bookYear) {
-        System.out.println(readerName + "взял книг: 1, " + " название:"+ bookTitle + ", автор:"+ bookAuthor +", год издания:"+ bookYear);
-    }
-    // RETURN BOOK
-    public void returnBook(String readerName) {
-        System.out.println(readerName + "вернул книг: 1 ");
-    }
-    public void returnBook(String readerName, String bookTitle) {
-        System.out.println(readerName + "вернул книг: 1," + "название:"+bookTitle);
-    }
-    public void returnBook(String readerName, String bookTitle, String bookAuthor, String bookYear) {
-        System.out.println(readerName + "взял книг: 1, " + " название:"+ bookTitle + ", автор:"+ bookAuthor +", год издания:"+ bookYear);
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
     }
 
-    public String getReader() {
-        return "Студент: " + readerName + ", читательский билет: " + readerCardNum +
-                ", факультет: " + readerFaculty +", дата рождения: " + readerDateOfBirth +
-                ", номер телефона: " + readerPhoneNum;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void takeBook(int bookCount) {
+        System.out.println(fio + " взял " + bookCount + " книг(и)");
+    }
+
+    public void takeBook(String... bookNames) {
+        System.out.println(fio + " взял книги: ");
+        for (String name: bookNames) {
+            System.out.print(name + " ");
+        }
+        System.out.println();
+    }
+
+    public void takeBook(Book... books) {
+        System.out.println(fio + " взял книги: ");
+        for (Book book: books) {
+            System.out.println(book.getName() + " (" + book.getAutor() + " " + book.getYear() +")");
+        }
+    }
+
+    public void returnBook(int bookCount) {
+        System.out.println(fio + " вернул " + bookCount + " книг(и)");
+    }
+
+    public void returnBook(String... bookNames) {
+        System.out.println(fio + " вернул книги: ");
+        for (String name: bookNames) {
+            System.out.print(name + " ");
+        }
+        System.out.println();
+    }
+
+    public void returnBook(Book... books) {
+        System.out.println(fio + " вернул книги: ");
+        for (Book book: books) {
+            System.out.println(book.getInfo());
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "fio='" + fio + '\'' +
+                ", libraryCard=" + libraryCard +
+                ", faculty='" + faculty + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,41 +1,31 @@
 package com.pb.gurev.hw5;
 
 public class Book {
-    public String bookTitle;
-    public String bookAuthor;
-    public String bookYear;
 
-    public Book (String bookTitle, String bookAuthor, String bookYear){
-        this.bookTitle = bookTitle;
-        this.bookAuthor = bookAuthor;
-        this.bookYear = bookYear;
-    }
+    private final String name;
+    private final String autor;
+    private final int year;
 
-    public String getBookTitle (){
-        return bookTitle;
-    }
-    public void setBookTitle (String bookTitle){
-        this.bookTitle = bookTitle;
+    public Book(String name, String autor, int year) {
+        this.name = name;
+        this.autor = autor;
+        this.year = year;
     }
 
-    public String getBookAuthor () {
-        return bookAuthor;
-    }
-    public void setBookAuthor (String bookAuthor){
-        this.bookAuthor = bookAuthor;
+    public String getName() {
+        return name;
     }
 
-    public String getBookYear (){
-        return bookYear;
-    }
-    public void setBookYear (String bookYear){
-        this.bookYear = bookYear;
+    public String getAutor() {
+        return autor;
     }
 
-    String getBook (){
-        return  "[ Название книги:" + bookTitle + ", автор:" + bookAuthor + ", год издания:" + bookYear+" ]";
+    public int getYear() {
+        return year;
+    }
+
+
+    public String getInfo() {
+        return name + " (" + autor + " " + year + " г.)";
     }
 }
-
-
-

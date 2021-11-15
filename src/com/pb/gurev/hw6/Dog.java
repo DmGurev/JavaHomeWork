@@ -1,39 +1,55 @@
 package com.pb.gurev.hw6;
 
-public class Dog extends Animal{
+import java.util.Objects;
+
+public class Dog extends Animal {
+
+    private String breed;
+
+    public Dog(String name, String breed) {
+        super(name);
+        this.breed = breed;
+    }
+
     @Override
-    public String getFood() {
-        return super.getFood();
+    public void makeNoise() {
+        System.out.println("Гав гав!");
     }
 
-    public String dogNick;
-    public String dogBreed;
-    public String dogLocation;
-    public String dogFood;
-
-    public Dog (String dogNick, String dogBreed, String dogLocation, String dogFood){
-        this.dogNick = dogNick;
-        this.dogBreed = dogBreed;
-        this.dogLocation = dogLocation;
-        this.dogFood = dogFood;
+    @Override
+    public void eat() {
+        System.out.println("Собака ест");
     }
 
-    public String getDogNick (){return dogNick;}
-    public void setDogNick (String dogNick){this.dogNick = dogNick;}
+    public String getBreed() {
+        return breed;
+    }
 
-    public String getDogBreed (){return dogBreed;}
-    public void setDogBreed (String dogBreed){this.dogNick =dogBreed;}
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
 
-    public String getDogLocation (){return dogLocation;}
-    public void setDogLocation (String dogLocation){this.dogLocation =dogLocation;}
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "food='" + food + '\'' +
+                ", location='" + location + '\'' +
+                ", name='" + name + '\'' +
+                ", breed='" + breed + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Dog dog = (Dog) o;
+        return Objects.equals(breed, dog.breed);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), breed);
+    }
 }
-
-
-
-
-
-
-
-
-
-

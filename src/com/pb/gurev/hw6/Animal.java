@@ -1,36 +1,63 @@
 package com.pb.gurev.hw6;
 
-public class Animal{
+import java.util.Objects;
 
-    //переменные:
-    private String food;
-    private String location;
+public class Animal {
+
+    protected String food;
+    protected String location;
+    protected final String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
 
     public String getFood() {
-       return food;
+        return food;
     }
-    public void setFood (String food){
-      this.food = food;
+
+    public void setFood(String food) {
+        if (food != null && !food.isEmpty()) {
+            this.food = food;
+        }
     }
 
     public String getLocation() {
         return location;
     }
-    public void setLocation (String location){
+
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    //методы:
-    public void makeNoise (String makeNoise){
-        System.out.println("Кот мяукает, собака лает, конь ржёт");
+    public String getName() {
+        return name;
     }
 
-    public void eat(String eat) {
-
+    public void makeNoise() {
+        System.out.println("животное издает звук");
     }
 
-    public void sleep(String sleep) {
-
+    public void eat() {
+        System.out.println("животное ест");
     }
 
+    public void sleep() {
+        System.out.println("животное спит");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(food, animal.food)
+                && Objects.equals(location, animal.location)
+                && Objects.equals(name, animal.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(food, location, name);
+    }
 }
