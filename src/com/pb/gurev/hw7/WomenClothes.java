@@ -1,6 +1,6 @@
-package com.pb.gurev.hw7;
-
-public interface WomenClothes {
-    void dressWomen();
-}
-
+//package com.pb.gurev.hw7;
+//
+//interface WomenClothes {
+//    void dressWomen();
+//}
+//

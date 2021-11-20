@@ -1,28 +1,30 @@
-package com.pb.gurev.hw7;
-
-public enum Size {
-        XXS,
-        XS,
-        S,
-        M,
-        L;
-    String description;
-    int euroSize;
-        Size XXS = new Size("XXS Детский размер",32);
-        Size XS = new Size("XS Взрослый размер",34);
-        Size S = new Size("S Взрослый размер",36);
-        Size M = new Size("M Детский размер",38);
-        Size L = new Size("L Взрослый размер", 40);
-
-        Size(String description,int euroSize ){
-            this.description = description;
-            this.euroSize = euroSize;
-        }
-
-    String getDescription() { //возврат description
-            return description;
-        }
-        int getEuroSize() { //возврат euroSize;
-            return euroSize;
-        }
-    }
+//package com.pb.gurev.hw7;
+//import hw7.Atelier;
+//enum Size {
+//    XXS("Детский размер", 32),
+//    XS( 34),
+//    S( 36),
+//    M( 38),
+//    L( 40);
+//
+//    private String description;
+//    private int euroSize;
+//
+//    Size(String description, int euroSize) {
+//        this.description = description;
+//        this.euroSize = euroSize;
+//    }
+//
+//    Size(int euroSize) {
+//        this.description = "Взрослый размер";
+//        this.euroSize = euroSize;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public int getEuroSize() {
+//        return euroSize;
+//    }
+//}

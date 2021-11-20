@@ -1,17 +1,11 @@
-package com.pb.gurev.hw7;
-
-public class Tie extends Clothes implements ManClothes{
-
-    @Override
-    public void dressMan() {
-    }
-         public Tie (String size, int eurosize, String colour, int price) {
-            this.size = size;
-            this.eurosize = eurosize;
-            this.colour = colour;
-            this.price = price;
-         }
-}
-
-
-
+////package com.pb.gurev.hw7;
+//static class Tie extends Atelier.Clothes implements Atelier.ManClothes {
+//    public Tie(Atelier.Size size, float price, String color) {
+//        super(size, price, color);
+//    }
+//
+//    @Override
+//    public void dressMan() {
+//        System.out.println("мужчина одевает галстук " + getInfo());
+//    }
+//}

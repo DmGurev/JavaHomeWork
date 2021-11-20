@@ -1,32 +1,162 @@
-package com.pb.gurev.hw7;
-
-import org.jetbrains.annotations.NotNull;
+package hw7;
 
 public class Atelier {
-    public void main(String[] args){
-        Pants pants = new Pants ("XXS Детский размер", 32, "белый", 400);
-        Tshirt tshirt = new Tshirt ("XS Взрослый размер", 34, "серый", 450);
-        Skirt skirt = new Skirt("S Взрослый размер", 36, "красный", 500);
-        Tie tie = new Tie ("L Взрослый размер", 40, "черный",250);
 
-        Clothes[]clothes= {pants, tshirt, skirt,  tie};
+    //------------------- Enum -----------------------
+    enum Size {
+        XXS("Детский размер", 32),
+        XS( 34),
+        S( 36),
+        M( 38),
+        L( 40);
+
+        private String description;
+        private int euroSize;
+
+        Size(String description, int euroSize) {
+            this.description = description;
+            this.euroSize = euroSize;
+        }
+
+        Size(int euroSize) {
+            this.description = "Взрослый размер";
+            this.euroSize = euroSize;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public int getEuroSize() {
+            return euroSize;
+        }
     }
-    static void dressMan (Clothes @NotNull []clothes){
-        System.out.println("Мужская одежда:");
-        for (Clothes cloth : clothes) {
-            if (cloth instanceof ManClothes) {
-                ((ManClothes) cloth).dressMan();
+
+    //------------------------- Interfaces -----------------
+    interface ManClothes {
+        void dressMan();
+    }
+
+    interface WomenClothes {
+        void dressWomen();
+    }
+
+    //------------------------ Classes ----------------------
+    static abstract class Clothes {
+        protected final Size size;
+        protected final float price;
+        protected final String color;
+
+        public Clothes(Size size, float price, String color) {
+            this.size = size;
+            this.price = price;
+            this.color = color;
+        }
+
+        public Size getSize() {
+            return size;
+        }
+
+        public float getPrice() {
+            return price;
+        }
+
+        public String getColor() {
+            return color;
+        }
+
+        public String getInfo() {
+            return "размер " + size.name() + " " + size.getEuroSize() + " " + size.getDescription() +
+                    " цвет " + color + " цена " + price;
+        }
+    }
+
+    static class Tshirt extends Clothes implements ManClothes, WomenClothes {
+        public Tshirt(Size size, float price, String color) {
+            super(size, price, color);
+        }
+
+        @Override
+        public void dressMan() {
+            System.out.println("мужчина одевает футболку " + getInfo());
+        }
+
+        @Override
+        public void dressWomen() {
+            System.out.println("женщина одевает футболку " + getInfo());
+        }
+    }
+
+    static class Pants extends Clothes implements ManClothes, WomenClothes {
+        public Pants(Size size, float price, String color) {
+            super(size, price, color);
+        }
+
+        @Override
+        public void dressMan() {
+            System.out.println("мужчина одевает штаны " + getInfo());
+        }
+
+        @Override
+        public void dressWomen() {
+            System.out.println("женщина одевает штаны " + getInfo());
+        }
+    }
+
+    static class Skirt extends Clothes implements WomenClothes {
+        public Skirt(Size size, float price, String color) {
+            super(size, price, color);
+        }
+
+        @Override
+        public void dressWomen() {
+            System.out.println("женщина одевает юбку " + getInfo());
+        }
+    }
+
+    static class Tie extends Clothes implements ManClothes {
+        public Tie(Size size, float price, String color) {
+            super(size, price, color);
+        }
+
+        @Override
+        public void dressMan() {
+            System.out.println("мужчина одевает галстук " + getInfo());
+        }
+    }
+
+    //-------------------------------- main ------------------------------
+
+    public static void main(String[] args) {
+        Clothes[] clothes = new Clothes[] {
+                new Tshirt(Size.S, 58.75f, "желтый"),
+                new Pants(Size.M, 105.50f, "черный"),
+                new Skirt(Size.M, 78.45f, "зеленый"),
+                new Tie(Size.XXS, 15.20f, "красный")
+        };
+
+        dressMan(clothes);
+
+        System.out.println();
+
+        dressWomen(clothes);
+    }
+
+    //-------------------------------- methods ---------------------------
+
+    private static void dressMan(Clothes[] clothes) {
+        for(Clothes c: clothes) {
+            if (c instanceof ManClothes) {
+                ((ManClothes) c).dressMan();
             }
         }
     }
-    static void dressWomen (Clothes @NotNull []clothes){
-        System.out.println("Женская одежда:");
-        for (Clothes cloth : clothes) {
-            if (cloth instanceof ManClothes) {
-                ((WomenClothes) cloth).dressWomen();
+
+    private static void dressWomen(Clothes[] clothes) {
+        for(Clothes c: clothes) {
+            if (c instanceof WomenClothes) {
+                ((WomenClothes) c).dressWomen();
             }
         }
     }
 }
-
-

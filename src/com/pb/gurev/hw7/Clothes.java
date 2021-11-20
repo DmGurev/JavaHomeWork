@@ -1,30 +1,31 @@
-package com.pb.gurev.hw7;
-//java.lang.String,int
-public abstract class Clothes {
-    String size;
-    int eurosize;
-    String colour;
-    int price;
-}
+//package com.pb.gurev.hw7;
+//import hw7.Atelier;
 //
-///
-//}  public Clothes (String size, int eurosize, String colour, int price){
+//static abstract class Clothes {
+//    protected final Atelier.Size size;
+//    protected final float price;
+//    protected final String color;
+//
+//    public Clothes(Atelier.Size size, float price, String color) {
 //        this.size = size;
-//        this.eurosize = eurosize;
-//        this.colour =colour;
 //        this.price = price;
+//        this.color = color;
 //    }
-//    public String getSize() {
+//
+//    public Atelier.Size getSize() {
 //        return size;
 //    }
-//    public int getEurosize() {
-//        return eurosize;
+//
+//    public float getPrice() {
+//        return price;
 //    }
-//    public String getColour() {
-//        return colour;
+//
+//    public String getColor() {
+//        return color;
 //    }
-//    public int getPrice() {return price;}
-
-
-
-
+//
+//    public String getInfo() {
+//        return "размер " + size.name() + " " + size.getEuroSize() + " " + size.getDescription() +
+//                " цвет " + color + " цена " + price;
+//    }
+//}

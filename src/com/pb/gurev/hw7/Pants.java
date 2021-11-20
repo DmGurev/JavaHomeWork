@@ -1,19 +1,19 @@
-package com.pb.gurev.hw7;
-
-import java.time.LocalDate;
-
-public class Pants extends Clothes implements ManClothes, WomenClothes{
-    @Override
-    public void dressMan() {
-    }
-    @Override
-    public void dressWomen() {
-    }
-    public Pants  (String size, int eurosize, String colour, int price) {
-        this.size = size;
-        this.eurosize = eurosize;
-        this.colour = colour;
-        this.price = price;
-    }
-}
-
+//package com.pb.gurev.hw7;
+//
+//import hw7.Atelier;
+//
+//static class Pants extends Atelier.Clothes implements Atelier.ManClothes, Atelier.WomenClothes {
+//    public Pants(Atelier.Size size, float price, String color) {
+//        super(size, price, color);
+//    }
+//
+//    @Override
+//    public void dressMan() {
+//        System.out.println("мужчина одевает штаны " + getInfo());
+//    }
+//
+//    @Override
+//    public void dressWomen() {
+//        System.out.println("женщина одевает штаны " + getInfo());
+//    }
+//}
