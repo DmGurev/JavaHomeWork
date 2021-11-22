@@ -2,6 +2,9 @@ package com.pb.gurev.hw9;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.io.*;
 import java.io.File;
 import java.util.Arrays;
@@ -9,6 +12,7 @@ import java.util.Scanner;
 
 public class FileNumber {
     public static void main(String[] args) throws Exception {
+        Path path = Paths.get("numbers.txt");
         try {
             File myObj = new File("C://Users//Дмитрий//IdeaProjects//JavaHomeWork//numbers.txt");
             if (myObj.createNewFile()) {
@@ -20,28 +24,69 @@ public class FileNumber {
             System.out.println("Обнаружена ошибка");
             e.printStackTrace();
         }
+
         try {
-            FileWriter myWriter = new FileWriter("C://Users//Дмитрий//IdeaProjects//JavaHomeWork//numbers.txt");
-            int[][] array = new int[10][10];
-            for (int i = 0; i < array.length; i++,
-                    System.out.println()) {
-                for (int u = 0; u < array.length; u++) {
-                    array[i][u] = ((int) (Math.random() * 99 + 1));
-                    System.out.println(array[i][u] + " ");
-                    myWriter.write(array[i][u] + " ");
-                }
-                myWriter.write("\n");
+                Writer Writer = new FileWriter("C://Users//Дмитрий//IdeaProjects//JavaHomeWork//numbers.txt");
+                int[][] array = new int[10][10];
+            for (int i = 0; i < array.length; i++, System.out.println()) {
+            for (int u = 0; u < array.length; u++) {
+                array[i][u] = ((int) (Math.random() * 99 + 1));
+                System.out.println(array[i][u] + " ");
+                Writer.write(array[i][u] + " ");
             }
-        } catch (Exception e) {
-            System.out.println("Произошла ошибка" + e);
-            e.printStackTrace();
+            Writer.write("\n");
+        }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
         }
     }
 }
 
 
 
+//            myWriter.close();
+////            System.out.println("Successfully wrote to the file.");
+//        } catch (IOException e) {
+//            System.out.println("An error occurred.");
+//            e.printStackTrace();
+              //  Writer.write("\n");
 
+
+//            Writer Writer = new FileWriter("C://Users//Дмитрий//IdeaProjects//JavaHomeWork//numbers.txt");
+//            int[][] array = new int[10][10];
+//            for (int i = 0; i < array.length; i++,
+//                    System.out.println()) {
+//                for (int u = 0; u < array.length; u++) {
+//                    array[i][u] = ((int) (Math.random() * 99 + 1));
+//                    System.out.println(array[i][u] + " ");
+//                    Writer.write(array[i][u] + " ");
+//                }
+//              Writer.write("\n");
+//            }
+//            writer.write("Some test 123");
+//            writer.newLine();
+//            writer.write("Other string 456");
+//        } catch (Exception ex) {
+//            System.out.println("Error with file write: " + ex);
+//        }
+//            System.out.println("Write to file \"" + path.toAbsolutePath() + "\" done!");
+//
+//
+//            // read from file
+//            System.out.println("Read text from file \"" + path.toAbsolutePath() + "\":");
+//            try (BufferedReader reader = Files.newBufferedReader(path)) {
+//
+//                System.out.println("----------------------------------");
+//                String line;
+//                while((line = reader.readLine()) != null) {
+//                    System.out.println(line);
+//                }
+//                System.out.println("----------------------------------");
+//
+//            } catch (Exception ex) {
+//                System.out.println("Error with file read: " + ex);
+//            }
+//            System.out.println("Read from file done!");
 
 
 //            myWriter.write("Files in Java might be tricky, but it is fun enough!");
@@ -112,8 +157,18 @@ public class FileNumber {
 //}
 //
 ////
-//
-//
+ //Writer Writer = new FileWriter("C://Users//Дмитрий//IdeaProjects//JavaHomeWork//numbers.txt");
+//            int[][] array = new int[10][10];
+//            for (int i = 0; i < array.length; i++,
+//                    System.out.println()) {
+//                for (int u = 0; u < array.length; u++) {
+//                    array[i][u] = ((int) (Math.random() * 99 + 1));
+//                    System.out.println(array[i][u] + " ");
+//                    Writer.write(array[i][u] + " ");
+//                }
+//              //  Writer.write("\n");
+//            }
+
 //
 //
 //
