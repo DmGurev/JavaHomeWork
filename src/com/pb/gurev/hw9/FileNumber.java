@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 public class FileNumber {
     public static void main(String[] args) throws Exception {
-        File myObj = new File("C://Users//Дмитрий//IdeaProjects//JavaHomeWork//numbers.txt");
+        File myObj = new File("C://Users//Дмитрий//IdeaProjects//JavaHomeWork" +
+                "//src//com//pb//gurev//hw9//numbers.txt");
         try {
             if (myObj.createNewFile()) {
                 System.out.println("Файл  " + myObj.getName() + "   создан");
@@ -21,7 +22,8 @@ public class FileNumber {
             e.printStackTrace();
         }
         try {
-                Writer Writer = new FileWriter("C://Users//Дмитрий//IdeaProjects//JavaHomeWork//numbers.txt");
+                Writer Writer = new FileWriter("C://Users//Дмитрий//IdeaProjects//JavaHomeWork" +
+                        "//src//com//pb//gurev//hw9//odd-numbers.txt");
                 int[][] array = new int[10][10];
             for (int i = 0; i < array.length; i++, System.out.println()) {
             for (int j = 0; j < array.length; j++) {
