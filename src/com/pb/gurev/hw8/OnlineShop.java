@@ -6,35 +6,35 @@ public class OnlineShop {
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Register on the site to enter.");
-        System.out.println("Input login:");
+        System.out.println("Зарегистрируйтесь на сайте");
+        System.out.println("Введите логин:");
 
         String login = scan.nextLine();
-        System.out.println("Input password:");
+        System.out.println("Введите пароль:");
         String password = scan.nextLine();
-        System.out.println("Registration successful! Welcome to the site!");
+        System.out.println("Регистрация успешная");
 
-        System.out.println("Input login:");
-        System.out.println("Input password:");
+        System.out.println("Введите логин:");
+        System.out.println("Введите пароль:");
         String confirmPassword = scan.nextLine();
 
         Auth auth = new Auth(login, password);
 
 
         try {
-            auth.singUp(login, password, confirmPassword);
-        } catch (WrongLoginException e) {
-            System.out.println("Password or login does not meet requirements!" + e);
-        } catch (WrongPasswordException e1) {
-            System.out.println("Password or login does not meet requirements!" + e1);
+            auth.signUp(login, password, confirmPassword);
+        } catch (WrongLoginException e1) {
+            System.out.println("Пароль и логин не соотетствуют" + e1);
+        } catch (WrongPasswordException e2) {
+            System.out.println("Пароль и логин не соотетствуют" + e2);
         }
 
         try {
-            auth.singIn(login, password);
-        }catch (WrongLoginException e) {
-            System.out.println("Password or login does not meet requirements!" + e + "Input login and password:");
-        }catch (WrongPasswordException e1) {
-            System.out.println("Password or login does not meet requirements!" + e1 + "Input login and password:");
+            auth.signIn(login, password);
+        }catch (WrongLoginException e1) {
+            System.out.println("Пароль и логин не соотетствуют" + e1 + "Введите логин/пароль:");
+        }catch (WrongPasswordException e2) {
+            System.out.println("Пароль и логин не соотетствуют" + e2 + "Введите логин/пароль:");
         }
     }
 
