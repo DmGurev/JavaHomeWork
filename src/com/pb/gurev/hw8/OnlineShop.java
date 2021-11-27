@@ -24,9 +24,9 @@ public class OnlineShop {
         try {
             auth.signUp(login, password, confirmPassword);
         } catch (WrongLoginException e1) {
-            System.out.println("Пароль и логин не соотетствуют" + e1);
+            System.out.println("Пароль и логин не соотетствуют  " + e1);
         } catch (WrongPasswordException e2) {
-            System.out.println("Пароль и логин не соотетствуют" + e2);
+            System.out.println("Пароль и логин не соотетствуют  " + e2);
         }
 
         try {

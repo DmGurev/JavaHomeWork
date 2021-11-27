@@ -23,13 +23,13 @@ public class Auth {
 
         }
         if (!Pattern.matches("[a-zA-Z_0-9] {5,}", password)) {
-            throw new WrongPasswordException("Password does not meet requirements!");
+            throw new WrongPasswordException("Пароль не соответствует требованям   ");
         } else if (!password.equals(confirmPassword)) {
-            throw new WrongPasswordException("Password does not match!");   //не совпадает
+            throw new WrongPasswordException("Пароли Не совпадают");
         } else {
             this.login = login;
             this.password = password;
-            System.out.println("Registration successful! Welcome to the site!");
+            System.out.println("Регистрация успешная");
         }
     }
 
@@ -39,9 +39,9 @@ public class Auth {
         System.out.println("Enter password:");
 
         if (!login.equals(log) || !password.equals(pass)) {
-            throw new WrongLoginException("Wrong password or login");
+            throw new WrongLoginException("Неправильный логин/пароль");
         } else {
-            System.out.println("Welcome to the site!");
+            System.out.println("Вы зашли на сайт");
         }
     }
 }
