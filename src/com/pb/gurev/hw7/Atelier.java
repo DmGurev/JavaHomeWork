@@ -125,7 +125,6 @@ public class Atelier {
         }
     }
 
-    //-------------------------------- main ------------------------------
 
     public static void main(String[] args) {
         Clothes[] clothes = new Clothes[] {

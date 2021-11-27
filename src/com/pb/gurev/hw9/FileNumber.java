@@ -1,80 +1,82 @@
 package com.pb.gurev.hw9;
+
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.io.*;
-import java.io.File;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FileNumber {
-    public static void main(String[] args) throws Exception {
-        File myObj = new File("C://Users//Дмитрий//IdeaProjects//JavaHomeWork" +
-                "//src//com//pb//gurev//hw9//numbers.txt");
-        try {
-            if (myObj.createNewFile()) {
-                System.out.println("Файл  " + myObj.getName() + "   создан");
-            } else {
-                System.out.println("Файл " + myObj.getName() + " создан ранее");
-            }
-        } catch (IOException e) {
-            System.out.println("Обнаружена ошибка1");
-            e.printStackTrace();
-        }
-        try {
-                Writer Writer = new FileWriter("C://Users//Дмитрий//IdeaProjects//JavaHomeWork" +
-                        "//src//com//pb//gurev//hw9//odd-numbers.txt");
-                int[][] array = new int[10][10];
-            for (int i = 0; i < array.length; i++, System.out.println()) {
-            for (int j = 0; j < array.length; j++) {
-                array[i][j] = ((int) (Math.random() * 99 + 1));
-                System.out.println(array[i][j] + " ");
-                Writer.write(array[i][j] + " ");
-            }
-        Writer.write("\n");
-                Writer.close();}
-        } catch (IOException e) {
-            System.out.println("Обнаружена ошибка2");
-        }
-        try {
-            //File myObj = new File("filename.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Обнаружена ошибка3");
-            e.printStackTrace();
-        }
-    }
-    public static void createOddNumbersFile() throws IOException {
-        try (Scanner in = new Scanner(new File("numbers.txt"))) {
-            PrintWriter pw = new PrintWriter(new File("odd-numbers.txt.txt"));
-            System.out.println("Вывод чисел , с учетом замены на ноль:");
-            while (in.hasNextLine()) {
-                Scanner line = new Scanner(in.nextLine());
-                while (line.hasNextInt()) {
-                    int digit = line.nextInt();
-                    if ( digit % 2 == 0) {
-                        System.out.println("0");
-                        digit = 0;
-                    } else
-                        System.out.println( digit + " ");
-                    pw.println( digit + " ");
+
+    public static void createNumbers() throws IOException {
+        int[][] array = new int[10][10];
+
+        try (Writer writer = new FileWriter("numbers.txt")) {
+
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    array[i][j] = ((int) (Math.random() * 99 +1));
+                    writer.write(array[i][j] + " ");
                 }
-                line.close();
-                pw.println();
+                writer.write("\n");
             }
-            System.out.println();
-        } catch (IOException ioException) {
-            System.out.println("Файл не записан" + ioException);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
         }
+        System.out.println(new String(Files.readAllBytes(Paths.get("numbers.txt"))));
+    }
+
+    public static void createOddNumbers() throws IOException {
+
+        Path path = Paths.get("numbers.txt");
+        int[][] array = new int[10][10];
+
+        try{
+            Scanner scan = new Scanner(path);
+
+            for(int i = 0; i <10; i++) {
+                for (int j = 0; j < 10; j++) {
+
+                    array[i][j] = scan.nextInt();
+
+                    if(array[i][j] % 2 == 0){
+                        array[i][j] = 0;
+                    }
+                    System.out.print(array[i][j] + " ");
+                }
+                System.out.println();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+
+        try (Writer writer = new FileWriter("odd_numbers.txt")) {
+
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+
+                    writer.write(array[i][j] + " ! ");
+
+                }
+                writer.write("\n");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+
+        System.out.println(new String(Files.readAllBytes(Paths.get("odd_numbers.txt"))));
+    }
+    public static void main(String[] args) throws IOException {
+        createNumbers();
+        createOddNumbers();
     }
 }
-
-
-
 
 
