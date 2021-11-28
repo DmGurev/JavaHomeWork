@@ -1,5 +1,5 @@
-package com.pb.gurev.hw10;
-
-//public abstract class Num {
-//    protected
-//}
+//package com.pb.gurev.hw10;
+//
+////public abstract class Num {
+////    protected
+////}

@@ -7,6 +7,12 @@ public class Main {
             public int intValue() {
                 return 0;
             }
+
+            @Override
+            public long longValue() {
+                return 0;
+            }
+
             @Override
             public float floatValue() {
                 return 0;
@@ -22,7 +28,7 @@ public class Main {
             ArrBox1.add(3, 9);
 
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("It is impossible to pad the array. The array is overflowed. Array length -" + ArrBox1.get(ArrBox1.size));
+            System.out.println("Массив переполнен. Его длина:   " + ArrBox1.get(ArrBox1.size));
             e.printStackTrace();
         }
         System.out.println(ArrBox1.index);
@@ -36,6 +42,12 @@ public class Main {
             public int intValue() {
                 return 0;
             }
+
+            @Override
+            public long longValue() {
+                return 0;
+            }
+
             @Override
             public float floatValue() {
                 return 0;
@@ -55,7 +67,7 @@ public class Main {
             ArrBox2.add(4, 9.99F);
 
         } catch (ArrayIndexOutOfBoundsException e2) {
-            System.out.println("It is impossible to pad the array. The array is overflowed. Array length -" + ArrBox2.get(ArrBox2.size));
+            System.out.println("Массив переполнен. Его длина:   " + ArrBox2.get(ArrBox2.size));
             e2.printStackTrace();
         }
         System.out.println(ArrBox2.size);
@@ -63,7 +75,7 @@ public class Main {
         System.out.println(ArrBox2.get(2));
         System.out.println(ArrBox2.average());
         System.out.println(ArrBox2.index);
-        System.out.println(ArrBox2.max());
+        System.out.println(ArrBox2.max ());
         System.out.println(ArrBox2.sum());
     }
 }

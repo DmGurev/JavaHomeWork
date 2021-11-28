@@ -28,26 +28,26 @@ public abstract class NumBox <T> extends Number{
         return count;
     }
 
-    public void add(int index, T num) throws ArrayIndexOutOfBoundsException {
+    public void add(int ind, T val) throws ArrayIndexOutOfBoundsException {
         if (index > numbers.length) {
             throw new ArrayIndexOutOfBoundsException();
-        } else  numbers[index] = num;
-    }
-    public double average() {
-        return (sum(/length());
+        } else  numbers[index] = val;
     }
 
-    public double sum(double[]i) {
+
+    public double sum() {
         double sum = 0.0;
         for (T i : numbers) {
-            if (i == null) {
+            if (i == null){
                 sum+=0;
-            } else
-                sum+=i;
             }
-        return sum;
+            else
+                sum+=i.doubleValue();   }
+            return sum;
+        }
+    public double average() {
+        return (sum()/length());
     }
-
     public T max() {
         T maxValue = numbers[0];
         for (T number : numbers) {
