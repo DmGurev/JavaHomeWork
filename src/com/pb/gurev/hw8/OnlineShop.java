@@ -32,9 +32,9 @@ public class OnlineShop {
         try {
             auth.signIn(login, password);
         }catch (WrongLoginException e1) {
-            System.out.println("Пароль и логин не соотетствуют" + e1 + "Введите логин/пароль:");
+            System.out.println("Пароль и логин не соотетствуют" + e1 );
         }catch (WrongPasswordException e2) {
-            System.out.println("Пароль и логин не соотетствуют" + e2 + "Введите логин/пароль:");
+            System.out.println("Пароль и логин не соотетствуют" + e2 );
         }
     }
 

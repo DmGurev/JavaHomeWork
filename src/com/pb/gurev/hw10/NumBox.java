@@ -1,91 +1,68 @@
 package com.pb.gurev.hw10;
 
-public class NumBox <T extends  Number> {
-    private final T [] numbers;
+public abstract class NumBox <T> extends Number{
 
-    public NumBox (int size){
-        numbers = (T[]) new Number [size];
-        int[] array = new  int[3];
-        int[] ints = {5, 6, 7,};
-    }
-    public T get (int index) {
-            return numbers[index];}
-    public void set (int index, T numbers){
-            this.numbers [index] = numbers;
+    private final T[] numbers;
+    int size;
+    int index;
+
+    public NumBox(int size) {
+        numbers = (T[]) new Number[size];
     }
 
-    public void add (T t) throws Exception{
-        if(this.filled >this.numbers.length) {
-            throw new Exception
-                    ("Массив заполнен");
-            this.numbers(this.filled) = t;
-            this.filled++;
+    public T get(int index) {
+        return numbers[index];
+    }
+
+    public void set(int index, T numbers) {
+        this.numbers[index] = numbers;
+    }
+
+    public int length() {
+        int count = 0;
+        for (T i: numbers) {
+            if (!(i == null)) {
+                count++;
+            } else count += 0;
         }
-
-        numbers.add(t);
+        return count;
     }
 
-
+    public void add(int index, T num) throws ArrayIndexOutOfBoundsException {
+        if (index > numbers.length) {
+            throw new ArrayIndexOutOfBoundsException();
+        } else  numbers[index] = num;
+    }
+    public double average() {
+        return (sum(/length());
     }
 
-    public Number (int size){
-        for (T t : numbers = (T[]) new Number[]) {
-
-        }
-
-
-        int[] list = {5, 6, 7, -7, -9, 2, 0, 11, -35, 5};
-    int max = list[0];
-
-    public NumBox(T[] numbers) {
-    }
-        for (int i = 0; i < arr.length; i++) {
-        arr[i] = arr.nextFloat();
-
-//    private T vehicle;
-////
-//    public T get() {
-//        return vehicle;
-//    }
-//
-//    public void set(T vehicle) {
-//        this.vehicle = vehicle;
-//    }
-public int lenth (Object [] [] ){
-
-    public double average(){
+    public double sum(double[]i) {
         double sum = 0.0;
         for (T i : numbers) {
-            if (i == null){
+            if (i == null) {
                 sum+=0;
-            } else sum+=i.double.Value();
-        }
+            } else
+                sum+=i;
+            }
         return sum;
-
-
-    public double sum() {
-    double sum = 0.0;
-    for (T i : numbers) {
-        if (i == null){
-            sum+=0;
-        } else sum+=i.double.Value();
     }
-    return sum;
 
     public T max() {
-        T maxValue = arr.get(0);
-        for (int i=0; i<arr.size(); i++) {
-            if (arr.get(i).doubleValue() > maxValue.doubleValue())
-                maxValue = arr.get(i);
+        T maxValue = numbers[0];
+        for (T number : numbers) {
+            if (maxValue instanceof Integer) {
+                if ((int) number > (int) maxValue)
+                    maxValue = number;
+            } else if (maxValue instanceof Float) {
+                if ((float) number > (float) maxValue)
+                    maxValue = number;
+            } else if (maxValue instanceof Double) {
+                if ((double) number > (double) maxValue)
+                    maxValue = number;
+            }
         }
-
-
-
+        return maxValue;
     }
-    }
+
 }
-}
-
-    public NumBox(T[] numbers) {
-        this.numbers = numbers;
-    }

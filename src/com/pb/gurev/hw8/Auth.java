@@ -35,8 +35,8 @@ public class Auth {
 
     public void signIn(String log, String pass)
             throws WrongLoginException, WrongPasswordException {
-        System.out.println("Enter login:");
-        System.out.println("Enter password:");
+        System.out.println("Введите логин:");
+        System.out.println("Введите пароль:");
 
         if (!login.equals(log) || !password.equals(pass)) {
             throw new WrongLoginException("Неправильный логин/пароль");
