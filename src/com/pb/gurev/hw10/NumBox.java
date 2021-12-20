@@ -1,68 +1,63 @@
 package com.pb.gurev.hw10;
 
-public abstract class NumBox <T> extends Number{
+public class NumBox<T extends Number> {
 
     private final T[] numbers;
-    int size;
-    int index;
+    private int size = 0;
 
-    public NumBox(int size) {
-        numbers = (T[]) new Number[size];
+    public NumBox(int maxSize) {
+        if (maxSize <= 0) {
+            throw new IllegalArgumentException("Param maxSize must be > 0");
+        }
+        numbers = (T[]) new Number[maxSize];
+    }
+
+    public void add(T num) {
+        if (size >= numbers.length) {
+            throw new NumBoxIsFullException("Current size is " + size);
+        }
+        numbers[size] = num;
+        size++;
     }
 
     public T get(int index) {
+        if (index >= size) {
+            return null;
+        }
         return numbers[index];
     }
 
-    public void set(int index, T numbers) {
-        this.numbers[index] = numbers;
-    }
-
     public int length() {
-        int count = 0;
-        for (T i: numbers) {
-            if (!(i == null)) {
-                count++;
-            } else count += 0;
-        }
-        return count;
+        return size;
     }
-
-    public void add(int ind, T val) throws ArrayIndexOutOfBoundsException {
-        if (index > numbers.length) {
-            throw new ArrayIndexOutOfBoundsException();
-        } else  numbers[index] = val;
-    }
-
 
     public double sum() {
-        double sum = 0.0;
-        for (T i : numbers) {
-            if (i == null){
-                sum+=0;
-            }
-            else
-                sum+=i.doubleValue();   }
-            return sum;
+        if (size < 1) {
+            throw new NumBoxIsEmptyException("NumBox is empty");
         }
-    public double average() {
-        return (sum()/length());
-    }
-    public T max() {
-        T maxValue = numbers[0];
-        for (T number : numbers) {
-            if (maxValue instanceof Integer) {
-                if ((int) number > (int) maxValue)
-                    maxValue = number;
-            } else if (maxValue instanceof Float) {
-                if ((float) number > (float) maxValue)
-                    maxValue = number;
-            } else if (maxValue instanceof Double) {
-                if ((double) number > (double) maxValue)
-                    maxValue = number;
-            }
+        double sum = 0;
+        for (int i = 0; i < size; i++) {
+            sum += numbers[i].doubleValue();
         }
-        return maxValue;
+        return sum;
     }
 
+    public double average() {
+        return sum() / size;
+    }
+
+    public T max() {
+        if (size < 1) {
+            throw new NumBoxIsEmptyException("NumBox is empty");
+        }
+        double max = numbers[0].doubleValue();
+        int maxIndex = 0;
+        for(int i = 1; i < size; i++) {
+            if (numbers[i].doubleValue() > max) {
+                max = numbers[i].doubleValue();
+                maxIndex = i;
+            }
+        }
+        return numbers[maxIndex];
+    }
 }
