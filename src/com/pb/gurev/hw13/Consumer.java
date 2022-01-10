@@ -12,7 +12,7 @@ class Consumer extends Thread {
         {
             try {
                 System.out.println("\"Consume\": " + prod.bq.poll(10, TimeUnit.SECONDS));
-                Thread.sleep(800);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
             }
         }

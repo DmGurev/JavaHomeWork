@@ -6,7 +6,7 @@ import java.util.concurrent.BlockingQueue;
 class Producer extends Thread {
     BlockingQueue<String> bq;
     Producer() {
-        bq = new ArrayBlockingQueue<String>(10);
+        bq = new ArrayBlockingQueue<String>(3);
     }
 
     public void run() {
@@ -14,7 +14,7 @@ class Producer extends Thread {
             try {
                 System.out.println("\"Produce\": " + i);
                 bq.put("" + i);
-                Thread.sleep(15);
+                Thread.sleep(40);
             } catch (InterruptedException e) {
             }
         }
